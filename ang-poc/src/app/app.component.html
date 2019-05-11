@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+<h1>Submit Filters</h1>
+<form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>username</label>
+    <input formControlName="username" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input formControlName="password" type="password" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input formControlName="confirmPassword" type="password" class="form-control">
+  </div>
+  <button class="btn btn-primary" type="submit">Filter</button>
+</form>
+{{filterForm.value | json}}
+
+<ul *ngFor="let filterData of filterData">
+  <li >{{filterData.id}}</li>
+  <li >{{filterData.username}}</li>
+  <li >{{filterData.age}}</li>
+</ul>
+</div>
+
